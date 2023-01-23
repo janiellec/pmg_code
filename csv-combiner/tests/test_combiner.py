@@ -1,10 +1,7 @@
-"""
-CASES:
-- multiple columns 
-"""
 import subprocess
 from pathlib import Path
 import pandas as pd
+
 
 def test_combiner_main():
     """ Tests that combiner.py functions well
@@ -23,22 +20,23 @@ def test_combiner_main():
         print("Testing input combinations")
         
         for indx in range(3):
-            subprocess.run(["python3", "combiner.py", "./" + PATHS[indx]], stdout=temp.csv)
+            subprocess.run(["python3", "combiner.py", "./" + PATHS[indx]], 
+                            stdout=temp)
 
-            out = len(pd.read_csv('temp.csv') - 1)
+            out = len(pd.read_csv('temp.csv')) - 1
             assert out == lengths[indx]
-
-            subprocess.run(["rm", "-rf", "temp.csv"])
+            temp.truncate(0)
 
         for indx in range(3):
-            subprocess.run(["python3", "combiner.py", "./" + PATHS[indx], "./" + PATHS[(indx + 1) % 3]], stdout=temp.csv)
+            subprocess.run(["python3", "combiner.py", "./" + PATHS[indx], "./" + PATHS[(indx + 1) % 3]], 
+                            stdout=temp)
 
-            out = len(pd.read_csv('temp.csv') - 1)
-            assert out == lengths[indx] + length[(indx + 1) % 3]
+            out = len(pd.read_csv('temp.csv')) - 2
+            assert out == lengths[indx] + lengths[(indx + 1) % 3]
 
-            subprocess.run(["rm", "-rf", "temp.csv"])
+            if indx != 2:
+                temp.truncate(0)
 
-        
 
 
 
