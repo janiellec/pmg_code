@@ -1,0 +1,30 @@
+                                            email_hash          category
+0    b9f6f22276c919da793da65c76345ebb0b072257d12402...           Blouses
+1    c2b5fa9e09ef2464a2b9ed7e351a5e1499823083c05791...            Shirts
+2    faaee0ff7d06b05313ecb75d46a9aed014b11023ca1af5...           Blouses
+3    5cd72da5035f2b36b604a16efc639cd04b6cfae7e487dc...            Shirts
+4    00449a86bb34e443a5f84635661f63514574a030a15e2e...         Cardigans
+..                                                 ...               ...
+122  0a2f9ca3a5cd8ea7534eca7facc6b088658e6fe4ae9d16...            Shirts
+123  da5be29a0cfe0e972f90bf2adf4437c45a6f6e55660e9c...           Blouses
+124  54ed61d132f97ba8d79649b3fe36ebe6c7e07684fa78fc...  "Gingham" Shorts
+125  af4111f9cd3f7cfda9c3d87c90d61a1f61b38bd848e098...         Cardigans
+126  0cab0fb6bcae905af963b0b3bf95a4c9043eab615e56b8...            Capris
+
+[127 rows x 2 columns]
+                                            email_hash          category
+0    b9f6f22276c919da793da65c76345ebb0b072257d12402...   Kitchen Cleaner
+1    c2b5fa9e09ef2464a2b9ed7e351a5e1499823083c05791...   Kitchen Cleaner
+2    faaee0ff7d06b05313ecb75d46a9aed014b11023ca1af5...   Kitchen Cleaner
+3    5cd72da5035f2b36b604a16efc639cd04b6cfae7e487dc...  Bathroom Cleaner
+4    00449a86bb34e443a5f84635661f63514574a030a15e2e...  Bathroom Cleaner
+..                                                 ...               ...
+825  c1f3ce7004f2a5c95fdddc002319f2186d4838de68f0d8...   Kitchen Cleaner
+826  3a008bb70763d4b6429fdda15dccac3501f2360744f43c...   Kitchen Cleaner
+827  4d275bb1eedfba7a307d3d1b0b1e6459743ec232b9b05b...   Kitchen Cleaner
+828  3931ed938bd5ed296b7ea4b7ea753029adc3f1199273f7...  Bathroom Cleaner
+829  fa76c33e58b5cbd453ba5b89b41015097ba25e5ea6eec7...  Bathroom Cleaner
+
+[830 rows x 2 columns]
+,email_hash,category,filename
+
