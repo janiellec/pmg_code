@@ -22,17 +22,15 @@ class CsvCombine:
             assert Path(path_file).is_file()
 
             dftemp = pd.read_csv(path_file, quotechar='"', escapechar="\\")
-            print(dftemp)
             dftemp['filename'] = Path(path_file).name
-            
-            if self.df_total.empty:
-                self.df_total = dftemp
-            else:
-                self.df_total = pd.merge(self.df_total, dftemp)
+
+            print(self.df_total)
+            self.df_total = pd.concat([self.df_total, dftemp])
 
 
     def print_combine(self):
-        print(self.df_total.to_csv())
+        print(self.df_total)
+        self.df_total.to_csv(sys.stdout, index=False)
 
     
     def combine_main(self):
