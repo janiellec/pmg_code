@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Combines CSV files together
 """
@@ -17,19 +19,21 @@ class CsvCombine:
 
 
     def combine_csv(self):
+        """"Combines CSV files"""
         self.df_total = pd.DataFrame()
+
         for path_file in self.csvfiles:
-            assert Path(path_file).is_file()
+            try:
+                dftemp = pd.read_csv(path_file, quotechar='"', escapechar="\\")
+            except IOError as e:
+                print(e)
+                exit(1)
 
-            dftemp = pd.read_csv(path_file, quotechar='"', escapechar="\\")
             dftemp['filename'] = Path(path_file).name
-
-            print(self.df_total)
-            self.df_total = pd.concat([self.df_total, dftemp])
+            self.df_total = pd.concat([self.df_total, dftemp])  
 
 
     def print_combine(self):
-        print(self.df_total)
         self.df_total.to_csv(sys.stdout, index=False)
 
     
@@ -45,4 +49,3 @@ def usage():
 if __name__ == "__main__":
     csv_comb = CsvCombine()
     csv_comb.combine_main()
-
